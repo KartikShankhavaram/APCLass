@@ -4,16 +4,16 @@ public class Main {
 	
 	public static void main(String args[]) {
 		
-		char switch;
+		char option;
 		Scanner in = new Scanner(System.in);
 		
 		System.out.print("Whose information do you want to enter? (e = employee, s = student): ");
-		switch = in.next().charAt(0);
-		while(switch != 'e' && switch != 's') {
+		option = in.next().charAt(0);
+		while(option != 'e' && option != 's') {
 			System.out.print("Enter 'e' or 's': ");
-			switch = in.next.charAt(0);
+			option = in.next().charAt(0);
 		}
-		if(switch == 's') {
+		if(option == 's') {
 			String name, branch;
 			int day, month, year;
 			char collegeYear;
@@ -54,7 +54,7 @@ public class Main {
 		
 			Employee employee = new Employee(ID, name);
 			employee.setDept(dept);
-			employee.seEmail(email);
+			employee.setEmail(email);
 			employee.displayInformation();
 		
 		
