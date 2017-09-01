@@ -1,6 +1,6 @@
 public class Student {
 	
-	static int ID = 0;
+	static int ID;
 	String name;
 	char year;
 	String branch;
