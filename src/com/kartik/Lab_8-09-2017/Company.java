@@ -2,6 +2,7 @@ public class Company {
     
     int companyId;
     String companyName;
+    int numberOfUnits;
     
     public Company(int companyId, String companyName) {
     	
@@ -10,6 +11,9 @@ public class Company {
   	
   	}
   	
-  	
+  	public void manufacture(int numberOfUnits) {
+  		
+  		this.numberOfUnits += numberOfUnits;
+  		 
 }
 

@@ -1,9 +1,4 @@
-public class Metro {
+public class Metro extends Company{
 
-	public static void main(String args[]) {
-		
-		
-		
-	}
 	
 }
