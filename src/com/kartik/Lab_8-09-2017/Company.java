@@ -1,13 +1,15 @@
 public class Company {
     
-    int numberOfProducts;
+    int companyId;
+    String companyName;
     
-    protected void buyProduct(int productId, int numberOfProducts) {
-        
-    }
-    
-    protected void sellProduct(int productId, int numberOfProducts) {
-        
-    }
-  
+    public Company(int companyId, String companyName) {
+    	
+    	this.companyId = companyId;
+    	this.companyName = companyName;
+  	
+  	}
+  	
+  	
 }
+
