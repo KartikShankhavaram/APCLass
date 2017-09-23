@@ -29,7 +29,7 @@ public class Main {
 				case 'm': 
 					while(true) {
 					
-						int exitFlag = 0;
+						boolean exitFlag = false;
 						
 						System.out.println("1. Enter details\n2. Search using ID\n3. Display number of records\n4.Exit\nEnter option: ");
 						int b = Integer.parseInt(in.nextLine());
@@ -80,15 +80,87 @@ public class Main {
 								
 							case 4: 
 							
-								exitFlag = 1;
+								exitFlag = true;
 								break:
 								
 							default: 
 							
 								System.out.println("\nEnter correct option.");
 								
-							}
+						}
+
+						if(exitFlag) {
+							break;
+						}
 							
+					}
+
+				case 'p':
+
+					while(true) {
+
+						boolean exitFlag = false;
+
+						System.out.println("1. Enter details\n2. Search using ID\n3. Display number of records\n4.Exit\nEnter option: ");
+						int b = Integer.parseInt(in.nextLine());
+
+						switch(b) {
+
+							case 1:
+
+								System.out.print("\nEnter ID: ");
+								int ID = Integer.parseInt(in.nextLine());
+								System.out.print("\nEnter title: ");
+								String title = in.nextLine();
+								System.out.print("\nEnter type: ");
+								String type = in.nextLine();
+								System.out.print("\nEnter length(in seconds): ");
+								int length = Integer.parseInt(in.nextLine());
+
+								m[numberMultimedia++] = new Multimedia(ID, title, length, type);
+								break;
+
+							case 2:
+
+								System.out.print("\nEnter ID to be searched: ");
+								int search = Integer.parseInt(in.nextLine());
+								int flag = 0;
+								for(int i = 0; i < numberMultimedia; i++) {
+
+									if(m[i].getID == search) {
+
+										m[i].display();
+										flag = 1;
+										break;
+
+									}
+
+								}
+								if(flag == 0) {
+
+									System.out.println("\nNo record with that ID was found.");
+
+								}
+								break;
+
+							case 3:
+
+								System.out.println("\nNumber of records: " + numberMultimedia);
+								break;
+
+							case 4:
+
+								exitFlag = true;
+								break:
+
+							default:
+
+								System.out.println("\nEnter correct option.");
+
+						}
+
+						if(exitFlag) {
+							break;
 						}
 						
 					}
