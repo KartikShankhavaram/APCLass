@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String args[]) {
@@ -15,12 +17,11 @@ public class Main {
 		while(true) {
 			
 			System.out.println("Enter 'p' for Printed items and 'm' for multimedia items (without quotes) or 'q' to exit the program: ");
-			a = '';
-			a = in.nextLine.charAt(0);
+			a = in.nextLine().charAt(0);
 			if(a != 'm' && a != 'p' && a != 'q') {
 				
 				System.out.print("Enter 'p' or 'm' or 'q': ");
-				a = in.nextLine.charAt(0);
+				a = in.nextLine().charAt(0);
 				
 			}
 			
@@ -39,13 +40,13 @@ public class Main {
 							case 1: 
 							 
 								System.out.print("\nEnter ID: ");
-								int ID = Integer.parseInt(in.nextLine());
+								ID = Integer.parseInt(in.nextLine());
 								System.out.print("\nEnter title: ");
-								String title = in.nextLine();
+								title = in.nextLine();
 								System.out.print("\nEnter type: ");
-								String type = in.nextLine();
+								type = in.nextLine();
 								System.out.print("\nEnter length(in seconds): ");
-								int length = Integer.parseInt(in.nextLine());
+								length = Integer.parseInt(in.nextLine());
 								
 								m[numberMultimedia++] = new Multimedia(ID, title, length, type);
 								break;
@@ -57,7 +58,7 @@ public class Main {
 								int flag = 0;
 								for(int i = 0; i < numberMultimedia; i++) {
 									
-									if(m[i].getID == search) {
+									if(m[i].getID() == search) {
 										
 										m[i].display();
 										flag = 1;
@@ -81,7 +82,7 @@ public class Main {
 							case 4: 
 							
 								exitFlag = true;
-								break:
+								break;
 								
 							default: 
 							
@@ -109,15 +110,15 @@ public class Main {
 							case 1:
 
 								System.out.print("\nEnter ID: ");
-								int ID = Integer.parseInt(in.nextLine());
+								ID = Integer.parseInt(in.nextLine());
 								System.out.print("\nEnter title: ");
-								String title = in.nextLine();
+								title = in.nextLine();
 								System.out.print("\nEnter type: ");
-								String type = in.nextLine();
-								System.out.print("\nEnter length(in seconds): ");
-								int length = Integer.parseInt(in.nextLine());
+								type = in.nextLine();
+								System.out.print("\nEnter number of pages: ");
+								pages = Integer.parseInt(in.nextLine());
 
-								m[numberMultimedia++] = new Multimedia(ID, title, length, type);
+								p[numberPrinted++] = new Printed(ID, title, pages, type);
 								break;
 
 							case 2:
@@ -125,11 +126,11 @@ public class Main {
 								System.out.print("\nEnter ID to be searched: ");
 								int search = Integer.parseInt(in.nextLine());
 								int flag = 0;
-								for(int i = 0; i < numberMultimedia; i++) {
+								for(int i = 0; i < numberPrinted; i++) {
 
-									if(m[i].getID == search) {
+									if(p[i].getID() == search) {
 
-										m[i].display();
+										p[i].display();
 										flag = 1;
 										break;
 
@@ -145,13 +146,13 @@ public class Main {
 
 							case 3:
 
-								System.out.println("\nNumber of records: " + numberMultimedia);
+								System.out.println("\nNumber of records: " + numberPrinted);
 								break;
 
 							case 4:
 
 								exitFlag = true;
-								break:
+								break;
 
 							default:
 
@@ -168,6 +169,8 @@ public class Main {
 				}
 				
 			}
+
+	}
 							
 								
 }
